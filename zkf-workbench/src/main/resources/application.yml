@@ -19,3 +19,13 @@ grpc:
       negotiation-type: plaintext
       enable-keep-alive: true
       default-load-balancing-policy: 'msg_to'
+
+
+rocketmq:
+  name-server: localhost:9876
+#  producer:
+#    group:
+#    retry-times-when-send-failed: 3
+#    retry-times-when-send-async-failed: 3
+#    send-message-timeout: 3000
+#    compress-message-body-threshold: 4096
