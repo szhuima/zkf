@@ -1,5 +1,6 @@
 package com.szhuima.zkf.common.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * * @Date    2025/4/10 16:21
  * * @Description
  **/
+@Builder
 @Data
 public class SendMsgRequest {
 
@@ -16,7 +18,7 @@ public class SendMsgRequest {
 
     private String content;
 
-    private String contentType;
+    private ContentType contentType;
 
     private String from;
 

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+import static com.szhuima.zkf.common.Constants.DISPATCH_CONVERSATION_TOPIC;
+
 /**
  * * @Author: szhuima
  * * @Date    2025/4/10 19:57
@@ -18,7 +20,7 @@ import javax.annotation.Resource;
 @Slf4j
 @Component
 @RocketMQMessageListener(consumerGroup = "ZKF-WORKER",
-        topic = "CUSTOMER-SEND-MSG", consumeMode = ConsumeMode.CONCURRENTLY)
+        topic = DISPATCH_CONVERSATION_TOPIC, consumeMode = ConsumeMode.CONCURRENTLY)
 public class CustomerSendMsgListener implements RocketMQListener<SendMsgRequest> {
 
     @Resource
