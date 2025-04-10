@@ -1,4 +1,4 @@
-package com.szhuima.zkf.workbench.service;
+package com.szhuima.zkf.worker.service;
 
 import com.szhuima.zkf.common.model.SendMsgRequest;
 

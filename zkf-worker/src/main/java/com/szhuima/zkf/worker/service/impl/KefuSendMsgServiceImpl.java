@@ -1,9 +1,9 @@
-package com.szhuima.zkf.workbench.service.impl;
+package com.szhuima.zkf.worker.service.impl;
 
 import com.szhuima.zim.api.proto.msg.MsgProto;
 import com.szhuima.zim.client.MsgSendClient;
 import com.szhuima.zkf.common.model.SendMsgRequest;
-import com.szhuima.zkf.workbench.service.KefuSendMsgService;
+import com.szhuima.zkf.worker.service.KefuSendMsgService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

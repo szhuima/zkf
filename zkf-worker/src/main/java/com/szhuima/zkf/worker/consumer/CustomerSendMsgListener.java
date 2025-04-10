@@ -1,8 +1,7 @@
-package com.szhuima.zkf.workbench.consumer;
+package com.szhuima.zkf.worker.consumer;
 
 import com.szhuima.zkf.common.model.SendMsgRequest;
-import com.szhuima.zkf.workbench.service.CustomerSendMsgService;
-import com.szhuima.zkf.workbench.service.KefuSendMsgService;
+import com.szhuima.zkf.worker.service.CustomerSendMsgService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.ConsumeMode;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;

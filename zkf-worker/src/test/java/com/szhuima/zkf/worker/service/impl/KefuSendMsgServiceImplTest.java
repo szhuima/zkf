@@ -1,14 +1,14 @@
-package com.szhuima.zkf.workbench.service.impl;
+package com.szhuima.zkf.worker.service.impl;
 
 
 import com.szhuima.zkf.common.model.SendMsgRequest;
-import com.szhuima.zkf.workbench.WorkBenchApplication;
-import com.szhuima.zkf.workbench.service.KefuSendMsgService;
+import com.szhuima.zkf.worker.WorkerApplication;
+import com.szhuima.zkf.worker.service.KefuSendMsgService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = WorkBenchApplication.class)
+@SpringBootTest(classes = WorkerApplication.class)
 public class KefuSendMsgServiceImplTest {
 
     @Autowired

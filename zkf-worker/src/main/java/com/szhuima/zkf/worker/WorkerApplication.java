@@ -1,4 +1,4 @@
-package com.szhuima.zkf.workbench;
+package com.szhuima.zkf.worker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,11 +13,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan(value = {"com.szhuima"})
 @EnableScheduling
 @SpringBootApplication
-public class WorkBenchApplication {
+public class WorkerApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(WorkBenchApplication.class, args);
+        SpringApplication.run(WorkerApplication.class, args);
     }
 
 }

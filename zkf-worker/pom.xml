@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zkf-workbench</artifactId>
+    <artifactId>zkf-worker</artifactId>
 
 
     <dependencies>
