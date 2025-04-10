@@ -9,3 +9,13 @@ spring:
         query-passing: true
       host: localhost
       port: 8500
+
+
+# 使用注册中心
+grpc:
+  client:
+    grpc-server:
+      address: 'discovery2:///zim-server-ws'
+      negotiation-type: plaintext
+      enable-keep-alive: true
+      default-load-balancing-policy: 'msg_to'

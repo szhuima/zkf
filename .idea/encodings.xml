@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zfk-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zfk-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-bot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-bot/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-dispatch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-dispatch/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-workbench/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zkf-workbench/src/main/resources" charset="UTF-8" />
+  </component>
 </project>
