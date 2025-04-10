@@ -1,0 +1,11 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: zkf-workbench
+  cloud:
+    consul:
+      discovery:
+        query-passing: true
+      host: localhost
+      port: 8500
