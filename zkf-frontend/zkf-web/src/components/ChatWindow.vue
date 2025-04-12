@@ -1,7 +1,7 @@
 <template>
   <div class="chat-container">
     <div class="messages-container">
-      <message-list :messages="messages" />
+      <message-list ref="messageListRef" :messages="messages" />
     </div>
     <div class="input-container">
       <message-input @send="handleSend" @upload="handleUpload" />
@@ -10,15 +10,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import MessageList from './MessageList.vue'
 import MessageInput from './MessageInput.vue'
 
 const messages = ref([])
+const messageListRef = ref(null)
 
 const handleSend = (text) => {
-  // TODO: 调用HTTP接口发送消息
   messages.value.push({ type: 'text', content: text, sender: 'user', timestamp: new Date() })
+  nextTick(() => {
+    messageListRef.value.scrollToBottom()
+  })
 }
 
 const handleUpload = (file) => {
@@ -42,8 +45,11 @@ const handleUpload = (file) => {
 
 .messages-container {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .input-container {

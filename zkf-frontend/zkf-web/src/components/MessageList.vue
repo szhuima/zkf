@@ -1,5 +1,5 @@
 <template>
-  <div class="message-list">
+  <div class="message-list" ref="messageContainer">
     <div v-for="(message, index) in messages" :key="index" class="message-item" :class="message.sender">
       <div v-if="message.type === 'text'" class="message-bubble">
         {{ message.content }}
@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+import { ref, watch } from 'vue'
 import { DownloadOutlined } from '@ant-design/icons-vue'
 import { Image as AImage, Button as AButton } from 'ant-design-vue'
 
@@ -30,6 +31,25 @@ const props = defineProps({
     required: true
   }
 })
+
+const messageContainer = ref(null)
+
+watch(() => props.messages, () => {
+  scrollToBottom()
+}, { deep: true })
+
+const scrollToBottom = () => {
+  if (messageContainer.value) {
+    messageContainer.value.scrollTo({
+      top: messageContainer.value.scrollHeight,
+      behavior: 'smooth'
+    })
+  }
+}
+
+defineExpose({
+  scrollToBottom
+});
 
 const formatTime = (timestamp) => {
   return new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
@@ -43,9 +63,12 @@ const downloadFile = (filename) => {
 
 <style scoped>
 .message-list {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  min-height: 0;
 }
 
 .message-item {
