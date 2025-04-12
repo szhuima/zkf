@@ -1,24 +1,5 @@
 syntax = "proto3";
 
-enum InstructionType {
-  ACK = 0;
-  PING = 1;
-  PONG = 2;
-  AUTH = 3;
-}
-
-message Instruction {
-  InstructionType type = 1;
-  int64 msgId = 2;
-  string userId = 3;
-}
-
-enum ContentType {
-  TEXT = 0;
-  IMAGE = 1;
-  FILE = 2;
-}
-
 message MsgRequest {
   RequestHeader header = 1;
   RequestBody body = 2;
@@ -43,4 +24,19 @@ message RequestBody {
 enum MsgType {
   SINGLE = 0;
   GROUP = 1;
+}
+
+enum ContentType {
+  TEXT = 0;
+  IMAGE = 1;
+  VIDEO = 2;
+  AUDIO = 3;
+  FILE = 4;
+}
+
+enum MsgStatus {
+  RECEIVED = 0;
+  READ = 1;
+  RECALLED = 2;
+  SENT_FAIL = 3;
 }

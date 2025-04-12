@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "msg:compile": "npx pbjs --target static-module --wrap es6 -o src/proto/msg.js src/proto/msg.proto",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -10,7 +11,6 @@
   "dependencies": {
     "ant-design-vue": "^4.2.6",
     "axios": "^1.8.4",
-    "protobufjs": "^7.4.0",
     "socket.io-client": "^4.7.0",
     "vue": "^3.3.0"
   },
@@ -20,6 +20,8 @@
     "@babel/preset-typescript": "^7.27.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@vitejs/plugin-vue": "^4.5.2",
+    "pbts": "^4.0.7",
+    "ts-protoc-gen": "^0.15.0",
     "typescript": "^5.8.3",
     "vite": "^4.3.9"
   }

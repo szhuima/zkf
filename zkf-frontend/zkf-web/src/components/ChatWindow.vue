@@ -15,6 +15,8 @@ import axios from 'axios'
 import MessageList from './MessageList.vue'
 import MessageInput from './MessageInput.vue'
 import { InstructionType, encodeInstruction } from '@/proto/instruction.ts';
+import { MsgRequest } from '@/proto/msg.js'; // 根据你的实际路径
+
 import Long from 'long';
 
 const messages = ref([])
@@ -43,15 +45,42 @@ onMounted(async () => {
         console.log('发送认证消息:', authMessage);
       }
       
-      ws.onmessage = (event) => {
-        const message = JSON.parse(event.data)
-        messages.value.push({
-          ...message,
-          sender: 'bot',
-          timestamp: new Date()
-        })
-        nextTick(() => messageListRef.value.scrollToBottom())
-      }
+      ws.onmessage = async (event) => {
+  try {
+    let data = event.data;
+
+    // 处理Blob类型数据
+    if (data instanceof Blob) {
+      data = await new Response(data).arrayBuffer();
+    }
+
+    // 解码protobuf消息
+    const msgRequest = MsgRequest.decode(new Uint8Array(data)); // 使用 MsgRequest.decode 进行解码
+    console.log('解码后的消息:', msgRequest);
+
+    if (msgRequest) {
+      const message = msgRequest.body;
+      messages.value.push({
+        type:  'text',
+        content: message.content,
+        sender: 'bot',
+        timestamp: new Date(message.sendTime)
+      });
+    } else {
+      console.error('解码失败: 消息为空');
+    }
+  } catch (error) {
+    console.error('消息处理失败:', error);
+    messages.value.push({
+      type: 'text',
+      content: `消息解析错误: ${error.message}`,
+      sender: 'system',
+      timestamp: new Date()
+    });
+  }
+};
+
+
       
       ws.onerror = (error) => {
         console.error('WebSocket连接错误:', error)
