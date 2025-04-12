@@ -137,6 +137,13 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <!--grpc springboot starter-->
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-server-spring-boot-starter</artifactId>
+                <version>${grpc-spring-boot-starter.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

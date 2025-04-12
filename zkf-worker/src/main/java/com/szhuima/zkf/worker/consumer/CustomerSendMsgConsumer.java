@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.ConsumeMode;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -21,13 +22,14 @@ import static com.szhuima.zkf.common.Constants.DISPATCH_CONVERSATION_TOPIC;
 @Component
 @RocketMQMessageListener(consumerGroup = "ZKF-WORKER",
         topic = DISPATCH_CONVERSATION_TOPIC, consumeMode = ConsumeMode.CONCURRENTLY)
-public class CustomerSendMsgListener implements RocketMQListener<SendMsgRequest> {
+public class CustomerSendMsgConsumer implements RocketMQListener<SendMsgRequest> {
 
     @Resource
     private CustomerSendMsgService customerSendMsgService;
 
     @Override
     public void onMessage(SendMsgRequest message) {
+        log.info("接收到消息:{}",message);
         customerSendMsgService.sendMsg(message);
     }
 }

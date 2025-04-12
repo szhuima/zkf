@@ -4,16 +4,14 @@ import com.szhuima.zkf.dispatch.model.DispatchReq;
 import com.szhuima.zkf.dispatch.model.DispatchResp;
 import com.szhuima.zkf.dispatch.service.DispatchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * * @Author: szhuima
  * * @Date    2025/4/10 22:45
  * * @Description
  **/
+@CrossOrigin
 @RequestMapping("/dispatch")
 @RestController
 public class DispatchController {

@@ -2,13 +2,13 @@ package com.szhuima.zkf.common.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * * @Author: szhuima
  * * @Date    2025/4/10 16:21
  * * @Description
  **/
-@Builder
 @Data
 public class SendMsgRequest {
 

@@ -40,12 +40,14 @@ public class DispatchServiceImpl implements DispatchService {
         // 2 根据负载状态选择客服
 
         // 3 发送MQ消息
-        SendMsgRequest msgReq = SendMsgRequest.builder().msgId(dispatchReq.getMsgId())
-                .from(dispatchReq.getFrom())
-                .content(dispatchReq.getContent())
-                .sendTime(System.currentTimeMillis())
-                .contentType(dispatchReq.getContentType())
-                .build();
+        long sendTime = System.currentTimeMillis();
+        SendMsgRequest msgReq = new SendMsgRequest();
+        msgReq.setMsgId(dispatchReq.getMsgId());
+        msgReq.setFrom(dispatchReq.getFrom());
+        msgReq.setContent(dispatchReq.getContent());
+        msgReq.setSendTime(sendTime);
+        msgReq.setContentType(dispatchReq.getContentType());
+        msgReq.setTo("1");
 
         try {
             SendResult sendResult = conversationProducer.dispatchConversation(msgReq);

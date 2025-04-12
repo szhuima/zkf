@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -20,6 +21,7 @@ import static com.szhuima.zkf.common.Constants.DISPATCH_CONVERSATION_TOPIC;
  **/
 @Slf4j
 @Component
+@ConditionalOnProperty(name = "worker.send-msg-type",havingValue = "mq",matchIfMissing = true)
 public class ConversationProducer {
 
     @Resource
