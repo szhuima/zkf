@@ -87,13 +87,15 @@ const beforeUpload = (file) => {
 
 .inputBox {
   flex: 1;
-  min-height: 64px;
+  min-height: 200px;
+  max-width: 80%;
   overflow-y: hidden;
 }
 
 .editable-div {
   width: 100%;
-  min-height: 64px;
+  min-height: 150px;
+  height: 100%;
   max-height: 200px;
   overflow-y: auto;
   border: 1px solid #d9d9d9;

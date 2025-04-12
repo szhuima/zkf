@@ -13,5 +13,7 @@ import ChatWindow from './components/ChatWindow.vue'
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-</style>    
+</style>

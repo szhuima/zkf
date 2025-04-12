@@ -32,7 +32,12 @@ const handleUpload = (file) => {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90vh;
+  width: 80%;
+  max-width: 80%;
+  margin: 20px auto;
+  border: 1px solid #898686;
+  border-radius: 8px;
 }
 
 .messages-container {
