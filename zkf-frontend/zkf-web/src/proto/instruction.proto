@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+enum InstructionType {
+  ACK = 0;
+  PING = 1;
+  PONG = 2;
+  AUTH = 3;
+}
+
+message Instruction {
+  InstructionType type = 1;
+  int64 msgId = 2;
+  string userId = 3;
+}
