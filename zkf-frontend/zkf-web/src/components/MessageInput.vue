@@ -64,11 +64,7 @@ const handleKeydown = (e) => {
 }
 
 const handleInput = () => {
-  // 自动调整高度逻辑
-  if (editorRef.value) {
-    editorRef.value.style.height = 'auto'
-    editorRef.value.style.height = `${editorRef.value.scrollHeight}px`
-  }
+  // 自动调整高度逻辑（已移除）
 }
 
 const beforeUpload = (file) => {
@@ -87,18 +83,18 @@ const beforeUpload = (file) => {
 
 .inputBox {
   flex: 1;
-  min-height: 200px;
+
   height: 100%;
   width: 100%;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .editable-div {
   padding: 10px;
   width: 100%;
-  min-height: 150px;
-  height: 100%;
+  height: 200px;
+  max-height: 200px;
   overflow-y: auto;
   border: 1px solid #d9d9d9;
   padding: 4px 40px 24px 11px;
@@ -113,7 +109,8 @@ const beforeUpload = (file) => {
 .sendBtnBox {
   position: absolute;
   right: 15px;
-  top: 150px;
+  bottom: 10px;
+  top: auto;
   z-index: 1;
 }
 
