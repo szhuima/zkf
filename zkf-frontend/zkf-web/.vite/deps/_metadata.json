@@ -1,0 +1,25 @@
+{
+  "hash": "381ad75e",
+  "configHash": "346878a0",
+  "lockfileHash": "d006f3c1",
+  "browserHash": "87fd3e75",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "72219f3d",
+      "needsInterop": false
+    },
+    "ant-design-vue": {
+      "src": "../../node_modules/ant-design-vue/es/index.js",
+      "file": "ant-design-vue.js",
+      "fileHash": "1472a673",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-6EGMB33I": {
+      "file": "chunk-6EGMB33I.js"
+    }
+  }
+}
