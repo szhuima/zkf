@@ -33,10 +33,10 @@ const handleUpload = (file) => {
   display: flex;
   flex-direction: column;
   height: 90vh;
-  width: 80%;
+  width: 70%;
   max-width: 80%;
   margin: 20px auto;
-  border: 1px solid #898686;
+  border: 1px solid #d7d3d3;
   border-radius: 8px;
 }
 
@@ -47,7 +47,6 @@ const handleUpload = (file) => {
 }
 
 .input-container {
-  padding: 16px;
   border-top: 1px solid #f0f0f0;
 }
 </style>

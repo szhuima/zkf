@@ -15,5 +15,6 @@ import ChatWindow from './components/ChatWindow.vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(239, 243, 244);
 }
 </style>

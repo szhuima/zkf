@@ -30,13 +30,12 @@
       @keydown.enter="handleKeydown"
       @input="handleInput"
     ></div>
-    </div>
-
 
     <div class="sendBtnBox">
         <a-button type="primary" @click="handleSend">
         发送
       </a-button>
+    </div>
     </div>
   </div>
 </template>
@@ -83,24 +82,26 @@ const beforeUpload = (file) => {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .inputBox {
   flex: 1;
   min-height: 200px;
-  max-width: 80%;
+  height: 100%;
+  width: 100%;
+  position: relative;
   overflow-y: hidden;
 }
 
 .editable-div {
+  padding: 10px;
   width: 100%;
   min-height: 150px;
   height: 100%;
-  max-height: 200px;
   overflow-y: auto;
   border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  padding: 4px 11px;
+  padding: 4px 40px 24px 11px;
   outline: none;
 }
 
@@ -110,9 +111,10 @@ const beforeUpload = (file) => {
 }
 
 .sendBtnBox {
-  margin-top: 8px;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  right: 15px;
+  top: 150px;
+  z-index: 1;
 }
 
 .input-area {
