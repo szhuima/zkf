@@ -154,7 +154,7 @@ const handleUpload = (file) => {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 80vh;
   width: 60%;
   max-width: 768px;
   margin: 0 auto;

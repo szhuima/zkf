@@ -93,10 +93,9 @@ const beforeUpload = (file) => {
 .editable-div {
   padding: 10px;
   width: 100%;
-  height: 200px;
+  height: 80px;
   max-height: 200px;
   overflow-y: auto;
-  padding: 4px 40px 24px 11px;
   outline: none;
 }
 
