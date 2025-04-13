@@ -17,6 +17,7 @@ import MessageInput from './MessageInput.vue'
 import {encodeInstruction, InstructionType} from '@/proto/instruction.ts';
 import {MsgRequest} from '@/proto/msg.js'; // 根据你的实际路径
 import Long from 'long';
+import config from '@/config.js'
 
 const messages = ref([])
 const messageListRef = ref(null)
@@ -25,7 +26,7 @@ const ws = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:8001/route/server/1')
+    const response = await axios.get(config.router_path)
     wsServerInfo.value = response.data
     console.log('WebSocket服务器地址:', wsServerInfo.value)
 
@@ -115,7 +116,7 @@ onUnmounted(() => {
 const handleSend = (text) => {
   messages.value.push({type: 'text', content: text, sender: 'user', timestamp: new Date()})
 
-  axios.post('http://localhost:9006/dispatch/conversation', {
+  axios.post(config.send_path, {
     conversationId: crypto.randomUUID(),
     msgId: Date.now(),
     content: text,
