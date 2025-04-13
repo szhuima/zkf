@@ -1,5 +1,6 @@
 <template>
   <div class="message-list" ref="messageContainer">
+
     <div v-for="(message, index) in messages" :key="index" class="message-item" :class="message.sender">
       <div v-if="message.type === 'text'" class="message-bubble">
         {{ message.content }}
@@ -94,8 +95,11 @@ const downloadFile = (filename) => {
 }
 
 .message-item.user .message-bubble {
-  background: #1890ff;
-  color: white;
+  background: #f5f5f5;
+}
+
+.message-item.bot .message-bubble{
+  background: #f5f5f5;
 }
 
 .message-time {

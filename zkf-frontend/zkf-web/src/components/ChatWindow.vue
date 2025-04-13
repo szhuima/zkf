@@ -154,17 +154,18 @@ const handleUpload = (file) => {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  width: 70%;
-  max-width: 80%;
-  margin: 20px auto;
-  border: 1px solid #d7d3d3;
-  border-radius: 8px;
+  height: 95vh;
+  width: 60%;
+  max-width: 768px;
+  margin: 0 auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .messages-container {
   flex: 1;
-  overflow-y: hidden;
+  overflow-y: auto;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -172,6 +173,13 @@ const handleUpload = (file) => {
 }
 
 .input-container {
-  border-top: 1px solid #f0f0f0;
+  padding: 8px 16px;
+  min-height: 56px;
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  margin: 0 8px 8px;
 }
 </style>

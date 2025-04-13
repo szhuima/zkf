@@ -22,20 +22,20 @@
     </div>
     
     <div class="inputBox">
-        <div
-      ref="editorRef"
-      class="editable-div"
-      contenteditable
-      placeholder="请输入消息"
-      @keydown.enter="handleKeydown"
-      @input="handleInput"
-    ></div>
+      <div
+        ref="editorRef"
+        class="editable-div"
+        contenteditable
+        placeholder="请输入问题，按回车发送"
+        @keydown.enter="handleKeydown"
+        @input="handleInput"
+      ></div>
+    </div>
 
     <div class="sendBtnBox">
         <a-button type="primary" @click="handleSend">
         发送
       </a-button>
-    </div>
     </div>
   </div>
 </template>
@@ -96,7 +96,6 @@ const beforeUpload = (file) => {
   height: 200px;
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #d9d9d9;
   padding: 4px 40px 24px 11px;
   outline: none;
 }
@@ -107,6 +106,7 @@ const beforeUpload = (file) => {
 }
 
 .sendBtnBox {
+  display: none;
   position: absolute;
   right: 15px;
   bottom: 10px;

@@ -48,7 +48,6 @@ public class DispatchServiceImpl implements DispatchService {
         msgReq.setSendTime(sendTime);
         msgReq.setContentType(dispatchReq.getContentType());
         msgReq.setTo("1");
-
         try {
             SendResult sendResult = conversationProducer.dispatchConversation(msgReq);
             if (!sendResult.getSendStatus().equals(SendStatus.SEND_OK)) {

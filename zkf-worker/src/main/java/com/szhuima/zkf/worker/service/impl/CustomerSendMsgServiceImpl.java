@@ -44,6 +44,7 @@ public class CustomerSendMsgServiceImpl implements CustomerSendMsgService {
                 .setTo(sendMsgRequest.getTo())
                 .setMsgType(MsgProto.MsgType.SINGLE)
                 .setContentType(MsgProto.ContentType.TEXT)
+                .setSendTime(sendMsgRequest.getSendTime())
                 .build();
 
         MsgProto.MsgRequest msgRequest = MsgProto.MsgRequest.newBuilder()
